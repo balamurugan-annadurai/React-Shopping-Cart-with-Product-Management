@@ -129,6 +129,7 @@ img {
 
 .card-content {
   width: 80%;
+  height: 310px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -137,7 +138,10 @@ img {
   border-radius: 25px;
   padding-bottom: 10px;
 }
-
+.product-img{
+  width: 40%;
+  height: 40%;
+}
 .scrolled {
   background-color: #ffffff;
   transition: 1s;
@@ -150,10 +154,14 @@ img {
 
 .img-container {
   width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .img-container img {
-  width: 100%;
+  width: 80%;
+  height: 80%;
 }
 
 .cart-product {
@@ -229,6 +237,18 @@ img {
 .grey{
   color: #a5a4a4;
 }
+.discount{
+  font-size: 10px;
+  margin-left: 20px;
+  color: green;
+  font-weight: 600;
+}
+.product-title{
+  font-size: 16px;
+  font-weight: 800;
+  padding: 0 10px;
+}
+
 @media screen and (max-width:570px) {
   .update-btn {
     margin-left: 0;
@@ -263,11 +283,18 @@ img {
   .empty-cart{
     width: 100%;
   }
+  .discount{
+    display: none;
+  }
+  .custom-title{
+    font-size: 15px;
+    width: 80%;
+  }
 }
 
 @media screen and (min-width:1200px) {
   .banner {
-    background: url(./assets/banner.jpg);
+    background: url(./assets/banner.png);
     background-position: center;
     background-image: 100%;
     background-size: cover;

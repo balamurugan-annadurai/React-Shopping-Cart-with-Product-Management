@@ -24,10 +24,10 @@ const Card = ({product}) => {
   }
 
   return (
-    <div className='card col-xl-4 col-lg-6'>
+    <div className='card col-xl-4 col-lg-6 col-md-6'>
       <div className='card-content'>
-        <img src={product.thumbnail} alt="" />
-        <h4 className='mt-3'>{product.title}</h4>
+        <img className='product-img' src={product.image} alt="" />
+        <h6 className='mt-3 product-title text-center'>{product.title}</h6>
         <p>${product.price}</p>
         <button onClick={change}
           className={product.status ? 'btn border-dark' : 'btn btn-dark'}>

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import MyContext from './MyContext'
-import Header from './Header';
 import CartPageHeader from './CartPageHeader';
 import { CardForCart } from './CardForCart';
 
@@ -8,17 +7,20 @@ import emptyCart from "../assets/cart-empty.svg";
 
 const Cart = () => {
     var total = 0;
+    var totalQuantity = 0;
     const { addedProducts } = useContext(MyContext);
+    console.log(addedProducts)
+    //Calculating the total selected products price
     addedProducts.forEach((product) => {
-        if (product.quantity > product.stock) {
+        if (Number(product.quantity) > product.rating.count) {
             product.quantity = 1;
         }
         else {
-            var discountedPrice = ((product.price - ((product.discountPercentage / 100) * product.price))
-                * Number(product.quantity));
-            total = Number(discountedPrice + total);
+            total = ((product.price)*product.quantity) + total;
+            totalQuantity = Number(product.quantity) + totalQuantity;
         }
     })
+    
     return (
         <div className='container'>
             <CartPageHeader />
@@ -37,6 +39,10 @@ const Cart = () => {
                 <div className="subtotal">
                     <h6>SUBTOTAL:</h6>
                     <h6>${total.toFixed(2)}</h6>
+                </div>
+                <div className="subtotal">
+                    <h6>TOTAL QUANTITY:</h6>
+                    <h6>{totalQuantity}</h6>
                 </div>
                 <div className="shipping">
                     <h6>SHIPPING:</h6>
