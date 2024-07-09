@@ -14,6 +14,7 @@ const Cart = () => {
     addedProducts.forEach((product) => {
         if (Number(product.quantity) > product.rating.count) {
             product.quantity = 1;
+            totalQuantity = Number(product.quantity) + totalQuantity;
         }
         else {
             total = ((product.price)*product.quantity) + total;
