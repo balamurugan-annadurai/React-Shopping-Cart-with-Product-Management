@@ -14,13 +14,14 @@ const Cart = () => {
         if (Number(product.quantity) > product.rating.count) {
             product.quantity = 1;
             totalQuantity = Number(product.quantity) + totalQuantity;
+            total = ((product.price) * product.quantity) + total;
         }
         else {
-            total = ((product.price)*product.quantity) + total;
+            total = ((product.price) * product.quantity) + total;
             totalQuantity = Number(product.quantity) + totalQuantity;
         }
     })
-    
+
     return (
         <div className='container'>
             <CartPageHeader />
