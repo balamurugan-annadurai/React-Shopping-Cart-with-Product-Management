@@ -9,7 +9,6 @@ const Cart = () => {
     var total = 0;
     var totalQuantity = 0;
     const { addedProducts } = useContext(MyContext);
-    console.log(addedProducts)
     //Calculating the total selected products price
     addedProducts.forEach((product) => {
         if (Number(product.quantity) > product.rating.count) {

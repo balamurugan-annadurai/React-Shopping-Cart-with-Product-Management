@@ -16,7 +16,6 @@ const App = () => {
   //function to add selected products to cart
   const addProductToCart = (product) => {
     setAddedProducts([...addedProducts, { ...product, quantity: 1 }]);
-    console.log(addedProducts)
   }
 
   //function to remove products from cart
